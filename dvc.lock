@@ -1,0 +1,17 @@
+schema: '2.0'
+stages:
+  make_dataset:
+    cmd: python .\src\data\make_dataset.py .\data\raw\train.csv
+    deps:
+    - path: .\data\raw\train.csv
+      hash: md5
+      md5: e59c291a4b1c640f1dab33b89daa22e1
+      size: 200589097
+    - path: .\src\data\make_dataset.py
+      hash: md5
+      md5: ca92a31d4f6279575c87c3e0cd70794a
+      size: 1123
+    params:
+      params.yaml:
+        make_dataset.seed: 42
+        make_dataset.test_size: 0.3
