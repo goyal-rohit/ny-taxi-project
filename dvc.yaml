@@ -11,5 +11,3 @@ stages:
     cmd: python .\src\features\build_features.py .\data\interim\train.csv .\data\interim\test.csv
     deps:
     - .\src\features\build_features.py
-    - .\data\interim\train.csv
-    - .\data\interim\test.csv
