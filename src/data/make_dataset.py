@@ -49,7 +49,7 @@ def main():
 
     input_file = sys.argv[1]
     data_path = home_dir.as_posix() + input_file
-    output_path = home_dir.as_posix() + '/data/processed'
+    output_path = home_dir.as_posix() + '/data/interim'
 
     data1 = load_data(data_path)
 
