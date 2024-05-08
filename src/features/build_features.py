@@ -58,8 +58,12 @@ def main():
         pickle.dump(transformed_obj,f)
 
     #save_obj(output_path, 'trans_obj.pkl', transformed_obj)
-    np.savez(output_path + '/train_arr', train_arr)
-    np.savez(output_path + '/test_arr', test_arr)
+    # np.savez(output_path + '/train_arr', train_arr)
+    # np.savez(output_path + '/test_arr', test_arr)
+    # np.save(output_path + '/train_arr', train_arr)
+    # np.save(output_path + '/test_arr', test_arr)
+    np.savez_compressed(output_path + '/train_arr', train_arr)
+    np.savez_compressed(output_path + '/test_arr', test_arr)
 
 
 if __name__ == "__main__":

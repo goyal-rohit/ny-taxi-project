@@ -11,3 +11,21 @@ stages:
     cmd: python .\src\features\build_features.py .\data\interim\train.csv .\data\interim\test.csv
     deps:
     - .\src\features\build_features.py
+  train_model:
+    cmd: python  .\src\models\train_model.py .\data\processed\
+    params:
+    - train_model.alpha
+    - train_model.max_iter
+    - train_model.l1_ratio
+    - train_model.criterion
+    - train_model.splitter
+    - train_model.max_features
+    - train_model.learning_rate
+    - train_model.n_estimators
+    - train_model.loss_g
+    - train_model.loss
+    - train_model.subsample
+    - train_model.criterion_g
+    - train_model.base_estimator
+    - train_model.bagging_n_estimators
+    - train_model.max_samples

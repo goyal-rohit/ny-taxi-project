@@ -20,5 +20,74 @@ stages:
     deps:
     - path: .\src\features\build_features.py
       hash: md5
-      md5: c2ae958800f9aaf01f39a0b9833b5276
-      size: 2287
+      md5: 867164fc77fb07a349206e3ab682eb41
+      size: 2523
+  train_model:
+    cmd: python  .\src\models\train_model.py .\data\processed\
+    params:
+      params.yaml:
+        train_model.alpha:
+        - 1.0
+        - 0.5
+        - 1.5
+        - 0.8
+        train_model.bagging_n_estimators:
+        - 500
+        - 100
+        - 250
+        train_model.base_estimator:
+        - LinearRegression()
+        - Ridge()
+        - Lasso()
+        - DecisionTreeRegressor()
+        train_model.criterion:
+        - squared_error
+        - friedman_mse
+        - absolute_error
+        - poisson
+        train_model.criterion_g:
+        - squared_error
+        - friedman_mse
+        train_model.l1_ratio:
+        - 0.5
+        - 0.8
+        - 0.2
+        train_model.learning_rate:
+        - 0.1
+        - 0.01
+        - 0.5
+        - 0.001
+        train_model.loss:
+        - linear
+        - square
+        - exponential
+        train_model.loss_g:
+        - squared_error
+        - absolute_error
+        - huber
+        - quantile
+        train_model.max_features:
+        - 0.5
+        - 0.25
+        train_model.max_iter:
+        - 1000
+        - 800
+        - 900
+        - 1500
+        train_model.max_samples:
+        - 0.25
+        - 0.5
+        train_model.n_estimators:
+        - 8
+        - 64
+        - 128
+        - 256
+        - 512
+        train_model.splitter:
+        - best
+        - random
+        train_model.subsample:
+        - 0.6
+        - 0.75
+        - 0.8
+        - 0.9
